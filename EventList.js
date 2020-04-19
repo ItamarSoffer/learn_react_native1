@@ -7,15 +7,15 @@ class EventList extends Component {
 	}
 
 	componentDidMount(){
-		const = events = require('./db.json').events;
+		const events = require('./db.json').events;
 		this.setState({events})
 	}
 
 	render(){
 		return(
 			<FlatList
-			data={[{name: "a"}, {name: "b"}]}
-			renderItem={({item}) => <Text>{item.name}</Text>}
+			data={this.state.events}
+			renderItem={({item}) => <Text>{item.title}</Text>}
 			/>
 	);
 }
