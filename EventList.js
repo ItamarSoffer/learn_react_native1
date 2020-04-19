@@ -1,12 +1,23 @@
 import React, {Component} from 'react';
-import {Text} from 'react-native';
+import {Text, FlatList} from 'react-native';
 
 class EventList extends Component {
+	state = {
+		events: []
+	}
 
-render(){
-	return(
-	<Text> Hello Sofferico!</Text>
-);
+	componentDidMount(){
+		const = events = require('./db.json').events;
+		this.setState({events})
+	}
+
+	render(){
+		return(
+			<FlatList
+			data={[{name: "a"}, {name: "b"}]}
+			renderItem={({item}) => <Text>{item.name}</Text>}
+			/>
+	);
 }
 }
 
