@@ -1,0 +1,4 @@
+run here:
+1. npm start
+2. json-server -H 0.0.0.0 db.json
+3. connect to expo and have fun!
