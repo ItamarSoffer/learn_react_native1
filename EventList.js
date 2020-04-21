@@ -32,11 +32,12 @@ class EventList extends Component {
 		}, 1000 
 			);
 
-		getEvents().then(events => this.setState({events}));
-		// const events = require('./db.json').events.map( ev => ({ ...ev,
-		// 		date: new Date(ev.date)
-		// 			}));
-		// this.setState({events})
+		this.props.navigation.addListener('focus', () => {
+		getEvents().then(events => this.setState({events}))
+		}
+		);
+
+		getEvents().then(events => this.setState({events}))
 	}
 
 
